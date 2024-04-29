@@ -17,7 +17,7 @@ const SignIn = () => {
     const { register, handleSubmit, formState: { errors } } = useForm<SignInFormData>();
     const mutation = useMutation(apiClient.signIn, {
         onSuccess: async () => {
-            showToast({ message: 'Login Successful!', type: 'SUCCESS' });
+            showToast({ message: 'Sign in Successful!', type: 'SUCCESS' });
             await queryClient.invalidateQueries("validateToken")
             navigate("/")
         },
